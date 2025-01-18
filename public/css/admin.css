@@ -1,0 +1,138 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #5e3a8c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  font-size: 14px;
+  text-align: left;
+}
+
+tr:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+button {
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  background-color: #5e3a8c;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #4c2a7e;
+  transform: translateY(-3px);
+}
+
+button:active {
+  background-color: #3a1e63;
+  transform: translateY(1px);
+}
+
+form {
+  display: inline;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  table, th, td {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    padding: 20px;
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  table, th, td {
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 13px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    padding: 15px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/Deposit.css">
+  <title>Deposit</title>
+</head>
+
+<body>
+  <div>
+    <h1>Deposit Funds</h1>
+    <form action="/deposit" method="POST">
+      <p> Wallet Balance: ₹ <%= wallet_balance %> </p>
+      <br>
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" value="<%= phone_number %>" readonly>
+      <br>
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" required placeholder="Enter amount to deposit" 
+        value="<%= amount %>" min="250">
+      <small>Minimum deposit amount is ₹250.</small>
+      <br>
+      <button type="submit">Generate QR Code</button>
+    </form>
+    
+    <% if (amount && amount < 250) { %>
+      <p style="color: red;">Deposit amount must be at least ₹250.</p>
+      <% } %>
+
+    <% if (qrCodeUrl) { %>
+      <h2>QR Code for Payment</h2>
+      <img src="<%= qrCodeUrl %>" alt="QR Code">
+      <p>Amount: ₹ <%= amount %> </p>
+      <form action="/submit-utr" method="POST">
+        <label for="utr">Enter UTR Number (12 digits):</label>
+        <input type="text" id="utr" name="utr" required pattern="\d{12}" placeholder="Enter UTR number">
+
+        <input type="hidden" name="transactionId" value="<%= transactionId %>">
+        <br>
+        <button type="submit">Submit UTR</button>
+      </form>
+    <% } %>
+    
+    <a href="/">
+      <button>Back to Home</button>
+    </a>
+  </div>
+</body>
+
+</html>

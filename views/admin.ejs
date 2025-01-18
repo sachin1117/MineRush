@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/admin.css">
+  <title>Admin Page</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin - Pending Transactions</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Phone Number</th>
+          <th>Amount</th>
+          <th>UPI</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>UTR</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% transactions.forEach(transaction => { %>
+          <tr>
+            <td><%= transaction.user_phone %></td>
+            <td><%= transaction.amount %></td>
+            <td><%= transaction.upi || 'N/A' %></td>
+            <td><%= transaction.type  %></td>
+            <td><%= transaction.status %></td>
+            <td><%= transaction.utr || 'N/A' %></td>
+            <td>
+              <form action="/admin/approve/<%= transaction.id %>" method="POST">
+                <button type="submit">Approve</button>
+              </form>
+              <form action="/admin/reject/<%= transaction.id %>" method="POST">
+                <button type="submit">Reject</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

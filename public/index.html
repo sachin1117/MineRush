@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neubrutalism Minesweeper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/public/css/game.css">
+</head>
+
+<body class="bg-[#1a1e24] h-screen overflow-y-auto">
+    <div class="px-4 py-6 max-w-md mx-auto">
+        <!-- Header -->
+        <div class="flex flex-col gap-4 mb-6">
+            <h1 class="text-3xl font-bold text-[#6EE7B7] neu-brutal bg-[#2A303C] p-3 text-center">Minesweeper</h1>
+            <div class="grid grid-cols-2 gap-3">
+                <button class="neu-brutal bg-[#6EE7B7] py-2.5 font-bold text-sm" id="login-btn"
+                    onclick="window.location.href='/login'">Login</button>
+                <button class="neu-brutal bg-[#60A5FA] py-2.5 font-bold text-sm" id="signup-btn"
+                    onclick="window.location.href='/signup'">Sign Up</button>
+                <button class="neu-brutal bg-[#FBBF24] py-2.5 font-bold text-sm" id="deposit-btn"
+                    style="display:none;">Deposit</button>
+                <button class="neu-brutal bg-[#EF4444] py-2.5 font-bold text-sm" id="withdraw-btn"
+                    style="display:none;">Withdraw</button>
+            </div>
+        </div>
+
+        <div class="space-y-4 mb-6">
+            <div class="neu-brutal bg-[#2A303C] p-4 space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-white text-lg">Wallet Balance: ₹<span id="wallet-balance">0</span></span>
+                    <i class="bi bi-arrow-clockwise text-xl cursor-pointer" onclick="refreshWalletBalance()"></i>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-white text-sm" for="bet-amount">Bet Amount: ₹</label>
+                    <input type="number" min="1" value="10" id="bet-amount"
+                        class="w-full p-2.5 neu-brutal bg-[#373d49] text-white text-sm">
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-white text-sm" for="mines-count">Number of Mines:</label>
+                    <input type="number" id="mines-count" value="3" min="1" max="20"
+                        class="w-full p-2.5 neu-brutal bg-[#373d49] text-white text-sm">
+                </div>
+                <div id="error-message" class="error text-red-400 font-medium text-sm"></div>
+            </div>
+            
+        <!-- Game Grid -->
+        <div id="gameGrid" class="grid grid-cols-5 gap-2 neu-brutal bg-[#2A303C] p-3">
+        </div>
+        <br>
+        <div class="neu-brutal bg-[#2A303C] p-4 space-y-3">
+            <button id="start-game-btn" class="w-full neu-brutal bg-[#6EE7B7] py-2.5 font-bold text-sm">
+                Start Game
+            </button>
+            <button id="cash-out-btn" disabled
+                class="w-full neu-brutal bg-[#60A5FA] py-2.5 font-bold text-sm opacity-50">
+                Cash Out
+            </button>
+        </div>
+    </div>
+
+    <script src="/public/js/game.js"></script>
+</body>
+
+</html>
