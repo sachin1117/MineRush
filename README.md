@@ -1,19 +1,19 @@
-Minerush-readme
 🎮 MineRush - Mines Game with Admin Panel
 
-MineRush is an interactive mines game built using Node.js, MySQL, HTML, CSS, and JavaScript. The project includes features for playing the game, handling deposits/withdrawals, and an Admin Panel for managing users and transactions.
+MineRush is a simple yet fun Mines Game built with Node.js, MySQL, HTML, CSS, and JavaScript.
+It supports deposits, withdrawals, and includes an Admin Panel for managing users and transactions.
 
 ✨ Features
 
-🎲 Play Mines game with dynamic logic
+🎲 Play Mines Game with dynamic logic
 
-💰 Deposit & Withdraw system
+💰 Deposit & Withdraw functionality
 
-🔑 User authentication & session management
+🔑 User authentication & session handling
 
-🛠️ Admin Panel to manage players and transactions
+🛠 Admin Panel to manage players and transactions
 
-🗄️ MySQL database integration
+🗄 MySQL database (via XAMPP)
 
 📱 Responsive frontend (HTML, CSS, JS)
 
@@ -21,31 +21,32 @@ MineRush is an interactive mines game built using Node.js, MySQL, HTML, CSS, and
 
 Backend: Node.js, Express.js
 
-Database: MySQL (using XAMPP server)
+Database: MySQL (XAMPP server)
 
 Frontend: HTML5, CSS3, JavaScript
 
-Session Management: Express-session
+Authentication: Express-session
 
 Email Service: Gmail SMTP (for password reset)
 
 ⚙️ Installation & Setup
 
-Clone the repository:
+1️⃣ Clone the repository
 
 git clone https://github.com/sachin1117/MineRush.git
 cd MineRush
 
-Install dependencies:
+
+2️⃣ Install dependencies
 
 npm install
 
-Make sure you have XAMPP (or MySQL server) running. Create a database in MySQL before starting the app.
 
-🌍 Environment Variables (.env)
+3️⃣ Setup MySQL using XAMPP and create a new database (example: minerush_db).
 
-Create a .env file in the project root:
+4️⃣ Add a .env file in the project root.
 
+🌍 Example .env File
 # Database Credentials
 MYSQL_HOST=localhost
 MYSQL_USER=root
@@ -54,61 +55,45 @@ MYSQL_DATABASE=minerush_db
 DB_PORT=3306
 PORT=5000
 
-
-# Session Secret for Express
+# Session Secret
 SESSION_SECRET=your_secret_key_here
 
-
-# UPI ID and Name
+# UPI Config
 UPI_ID=
 UPI_NAME=sachin
 
-
-# Forget Password Email Config
+# Gmail Config (for Forgot Password)
 GMAIL_USER=
 GMAIL_PASS=
 CLIENT_URL=http://localhost:3000
+
 ▶️ Running the Project
-
-Start the server:
-
 npm run dev
 
-Server will start at: http://localhost:5000
+
+The server will run at: http://localhost:5000
 
 📂 Folder Structure
 MineRush/
-├── config/
-│   └── db.js          # MySQL connection setup
-├── public/            # Static assets (HTML, CSS, JS)
-├── routes/            # API routes
-├── views/             # Frontend templates (if any)
-├── server.js          # Main server file
-├── package.json       # Dependencies
-└── .env               # Environment variables
-🤝 Contributing
+├── config/        # Database connection
+├── public/        # Static files (HTML, CSS, JS)
+├── routes/        # API routes
+├── views/         # Templates (if any)
+├── server.js      # Main entry point
+├── package.json   # Dependencies
+└── .env           # Environment variables
 
-Contributions are welcome!
+🤝 Contributing
 
 Fork the repository
 
-Create a new branch (feature/new-feature)
+Create a new branch (feature/my-feature)
 
 Commit your changes
 
-Push and open a Pull Request
+Push & open a Pull Request
 
-📧 Contact / Author
+📧 Contact
 
 Author: Sachin
 🔗 GitHub: sachin1117
-
-🚀 Next Steps
-
-Add Docker support for easy deployment
-
-Deploy to Render / Railway / Vercel
-
-Improve Admin Dashboard UI
-
-Add transaction history filters
