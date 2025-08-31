@@ -54,7 +54,7 @@ router.post('/send-reset-link', (req, res) => {
 
                 // Create the reset link
                 const clientUrl = process.env.CLIENT_URL.replace(/\/$/, ''); 
-                const resetLink = `${clientUrl}/reset-password?token=${token}&gmail=${encodeURIComponent(gmail)}`;ail)}`;
+                const resetLink = `${clientUrl}/reset-password?token=${token}&gmail=${encodeURIComponent(gmail)}`;
 
                 // Email options
                 const mailOptions = {
